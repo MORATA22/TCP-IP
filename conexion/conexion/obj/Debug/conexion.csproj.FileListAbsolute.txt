@@ -1,0 +1,10 @@
+G:\DAM\1ABP\TCP.IP\conexion\conexion\obj\Debug\conexion.csprojAssemblyReference.cache
+G:\DAM\1ABP\TCP.IP\conexion\conexion\obj\Debug\conexion.Properties.Resources.resources
+G:\DAM\1ABP\TCP.IP\conexion\conexion\obj\Debug\conexion.csproj.GenerateResource.cache
+G:\DAM\1ABP\TCP.IP\conexion\conexion\obj\Debug\conexion.csproj.CoreCompileInputs.cache
+G:\DAM\1ABP\TCP.IP\conexion\conexion\bin\Debug\conexion.exe.config
+G:\DAM\1ABP\TCP.IP\conexion\conexion\bin\Debug\conexion.exe
+G:\DAM\1ABP\TCP.IP\conexion\conexion\bin\Debug\conexion.pdb
+G:\DAM\1ABP\TCP.IP\conexion\conexion\obj\Debug\conexion.Cliente.resources
+G:\DAM\1ABP\TCP.IP\conexion\conexion\obj\Debug\conexion.exe
+G:\DAM\1ABP\TCP.IP\conexion\conexion\obj\Debug\conexion.pdb
