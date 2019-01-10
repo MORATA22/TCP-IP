@@ -18,9 +18,6 @@ namespace conexion
         {
             InitializeComponent();
         }
-
-
-
         
         public void conec(string server)
         {
@@ -28,7 +25,6 @@ namespace conexion
             {
                 //Instanciamos TCPClient
                 TcpClient client = new TcpClient(server, port);
-
                 //Cerrar Conexión
                 client.Close();
             }
@@ -40,13 +36,13 @@ namespace conexion
 
         private void conectar_Click(object sender, EventArgs e)
         {
-            if (txtenviar.Text != "")
+            if (txtenviar.Text != string.Empty)
             {
                 conec("127.0.0.1");
             }
             else
             {
-                
+                MessageBox.Show("Error");
             }
         }
     }

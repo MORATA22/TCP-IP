@@ -42,28 +42,31 @@ namespace server
                     IPAddress ip = IPAddress.Parse("127.0.0.1");
                     lisen = new TcpListener(ip, port);
                     lisen.Start();
-
-                    cliente = new TcpClient();
-
-                    if (lisen.Pending())
-                        cliente = lisen.AcceptTcpClient();
-
-                    //Invocamos al control para acceder al el
-                    if (labconec.InvokeRequired)
-                    {
-                        labconec.Invoke((MethodInvoker)delegate { labconec.Text = "Conectado al cliente\n"; });
-                    }
-                    else
-                    {
-                        labconec.Text = "Conectado al cliente\n";
-                    }
-
-                    cliente.Close();
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine(e.Message);
-                }                
+                }
+                while (true)
+                {
+                    cliente = new TcpClient();
+
+                    if (lisen.Pending())
+                    {
+                        cliente = lisen.AcceptTcpClient();
+                    }
+                    //Invocamos al control para acceder al el
+                    //if (labconec.InvokeRequired)
+                    //{
+                    //    labconec.Invoke((MethodInvoker)delegate { labconec.Text = "Conectado al cliente\n"; });
+                    //}
+                    //else
+                    //{
+                    //    labconec.Text = "Conectado al cliente\n";
+                    //}
+                
+                cliente.Close();
+                }
             }
         }
     }
