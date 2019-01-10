@@ -34,6 +34,7 @@ namespace server
             //instancias
             TcpListener lisen = null;
             TcpClient cliente = null;
+
             while (true)
             {
                 try
@@ -49,23 +50,20 @@ namespace server
                 }
                 while (true)
                 {
-                    cliente = new TcpClient();
-
                     if (lisen.Pending())
                     {
                         cliente = lisen.AcceptTcpClient();
-                    }
-                    //Invocamos al control para acceder al el
-                    //if (labconec.InvokeRequired)
-                    //{
-                    //    labconec.Invoke((MethodInvoker)delegate { labconec.Text = "Conectado al cliente\n"; });
-                    //}
-                    //else
-                    //{
-                    //    labconec.Text = "Conectado al cliente\n";
-                    //}
-                
-                cliente.Close();
+
+                        if (labconec.InvokeRequired)
+                        {
+                            labconec.Invoke((MethodInvoker)delegate { labconec.Text = "Conectado al cliente\n"; });
+                        }
+                        else
+                        {
+                            labconec.Text = "Conectado al cliente\n";
+                        }
+                        cliente.Close();
+                    }                       
                 }
             }
         }
