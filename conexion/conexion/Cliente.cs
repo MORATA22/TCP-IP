@@ -19,11 +19,9 @@ namespace conexion
             InitializeComponent();
         }
 
-        private void Cliente_Load(object sender, EventArgs e)
-        {
-            //Al Cargar el form utilizamos la función conec y le mandamos un valor (IP)
-            conec("127.0.0.1");            
-        }
+
+
+        
         public void conec(string server)
         {
             try
@@ -38,6 +36,11 @@ namespace conexion
             {
                 Console.WriteLine("SocketException: {0}", e);
             }
+        }
+
+        private void conectar_Click(object sender, EventArgs e)
+        {
+            conec("127.0.0.1");
         }
     }
 }

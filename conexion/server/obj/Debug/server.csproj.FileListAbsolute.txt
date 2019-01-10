@@ -8,3 +8,13 @@ G:\DAM\1ABP\TCP.IP\conexion\server\obj\Debug\server.csproj.GenerateResource.cach
 G:\DAM\1ABP\TCP.IP\conexion\server\obj\Debug\server.csproj.CoreCompileInputs.cache
 G:\DAM\1ABP\TCP.IP\conexion\server\obj\Debug\server.exe
 G:\DAM\1ABP\TCP.IP\conexion\server\obj\Debug\server.pdb
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\server\bin\Debug\server.exe.config
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\server\bin\Debug\server.exe
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\server\bin\Debug\server.pdb
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\server\obj\Debug\server.csprojAssemblyReference.cache
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\server\obj\Debug\server.Properties.Resources.resources
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\server\obj\Debug\server.server.resources
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\server\obj\Debug\server.csproj.GenerateResource.cache
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\server\obj\Debug\server.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\server\obj\Debug\server.exe
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\server\obj\Debug\server.pdb

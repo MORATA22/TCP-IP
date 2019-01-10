@@ -28,21 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtenviar = new System.Windows.Forms.TextBox();
+            this.conectar = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.conectar);
+            this.groupBox1.Controls.Add(this.txtenviar);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(298, 72);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 196);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Cliente";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Enviar:";
+            // 
+            // txtenviar
+            // 
+            this.txtenviar.Location = new System.Drawing.Point(62, 39);
+            this.txtenviar.Name = "txtenviar";
+            this.txtenviar.Size = new System.Drawing.Size(100, 20);
+            this.txtenviar.TabIndex = 1;
+            // 
+            // conectar
+            // 
+            this.conectar.Location = new System.Drawing.Point(62, 144);
+            this.conectar.Name = "conectar";
+            this.conectar.Size = new System.Drawing.Size(75, 23);
+            this.conectar.TabIndex = 2;
+            this.conectar.Text = "Conectar";
+            this.conectar.UseVisualStyleBackColor = true;
+            this.conectar.Click += new System.EventHandler(this.conectar_Click);
             // 
             // Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBox1);
             this.Name = "Cliente";
             this.Text = "cliente";
-            this.Load += new System.EventHandler(this.Cliente_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button conectar;
+        private System.Windows.Forms.TextBox txtenviar;
+        private System.Windows.Forms.Label label1;
     }
 }
 
