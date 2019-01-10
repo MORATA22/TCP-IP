@@ -40,7 +40,14 @@ namespace conexion
 
         private void conectar_Click(object sender, EventArgs e)
         {
-            conec("127.0.0.1");
+            if (txtenviar.Text != "")
+            {
+                conec("127.0.0.1");
+            }
+            else
+            {
+                
+            }
         }
     }
 }
