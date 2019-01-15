@@ -19,13 +19,42 @@ namespace conexion
             InitializeComponent();
         }
         
-        public void conec(string server)
+        public void conec(string server, string mess)
         {
             try
             {
                 //Instanciamos TCPClient
                 TcpClient client = new TcpClient(server, port);
-                //Cerrar Conexión
+
+                Byte[] dades = System.Text.Encoding.ASCII.GetBytes(mess);
+                NetworkStream stream = client.GetStream();       
+                
+                stream.Write(dades, 0, dades.Length);
+
+                if (labconver.InvokeRequired)
+                {
+                    labconver.Invoke((MethodInvoker)delegate { labconver.Text = txtenviar.Text; });
+                }
+                else
+                {
+                    labconver.Text = txtenviar.Text;
+                }
+
+                dades = new Byte[256];
+                string mensaje = "";
+
+                Int32 bytes = stream.Read(dades, 0, dades.Length);
+                mensaje = System.Text.Encoding.ASCII.GetString(dades, 0, bytes);
+
+                if (labresp.InvokeRequired)
+                {
+                    labresp.Invoke((MethodInvoker)delegate { labresp.Text = mensaje; });
+                }
+                else
+                {
+                    labresp.Text = mensaje;
+                }
+
                 client.Close();
             }
             catch (SocketException e)
@@ -38,12 +67,14 @@ namespace conexion
         {
             if (txtenviar.Text != string.Empty)
             {
-                conec("127.0.0.1");
+                conec("127.0.0.1", txtenviar.Text);
             }
             else
             {
                 MessageBox.Show("Error");
             }
         }
+
+        
     }
 }

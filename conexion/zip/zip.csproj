@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AB320AC8-1131-4AC0-A6BA-A23CDB6E9FE5}</ProjectGuid>
+    <ProjectGuid>{C06D8D1A-04CD-4D4C-BF18-622B38A69053}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>server</RootNamespace>
-    <AssemblyName>server</AssemblyName>
+    <RootNamespace>zip</RootNamespace>
+    <AssemblyName>zip</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="server.cs">
+    <Compile Include="Z.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="server.Designer.cs">
-      <DependentUpon>server.cs</DependentUpon>
+    <Compile Include="Z.Designer.cs">
+      <DependentUpon>Z.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -63,8 +63,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="server.resx">
-      <DependentUpon>server.cs</DependentUpon>
+    <EmbeddedResource Include="Z.resx">
+      <DependentUpon>Z.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -78,12 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\zip\zip.csproj">
-      <Project>{c06d8d1a-04cd-4d4c-bf18-622b38a69053}</Project>
-      <Name>zip</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

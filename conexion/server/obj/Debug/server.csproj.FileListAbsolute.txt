@@ -18,3 +18,7 @@ C:\Users\admin\Documents\GitHub\TCP-IP\conexion\server\obj\Debug\server.csproj.G
 C:\Users\admin\Documents\GitHub\TCP-IP\conexion\server\obj\Debug\server.csproj.CoreCompileInputs.cache
 C:\Users\admin\Documents\GitHub\TCP-IP\conexion\server\obj\Debug\server.exe
 C:\Users\admin\Documents\GitHub\TCP-IP\conexion\server\obj\Debug\server.pdb
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\server\bin\Debug\zip.exe
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\server\bin\Debug\zip.pdb
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\server\bin\Debug\zip.exe.config
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\server\obj\Debug\server.csproj.CopyComplete
