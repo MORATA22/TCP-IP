@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "conexion", "conexion\conexi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "server", "server\server.csproj", "{AB320AC8-1131-4AC0-A6BA-A23CDB6E9FE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zip", "zip\zip.csproj", "{C06D8D1A-04CD-4D4C-BF18-622B38A69053}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ficheros", "zip\ficheros.csproj", "{C06D8D1A-04CD-4D4C-BF18-622B38A69053}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

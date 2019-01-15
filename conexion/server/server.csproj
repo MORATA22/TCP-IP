@@ -80,9 +80,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\zip\zip.csproj">
+    <ProjectReference Include="..\zip\ficheros.csproj">
       <Project>{c06d8d1a-04cd-4d4c-bf18-622b38a69053}</Project>
-      <Name>zip</Name>
+      <Name>ficheros</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

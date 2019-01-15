@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Z.cs">
+    <Compile Include="fich.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Z.Designer.cs">
-      <DependentUpon>Z.cs</DependentUpon>
+    <Compile Include="fich.Designer.cs">
+      <DependentUpon>fich.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -63,8 +63,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Z.resx">
-      <DependentUpon>Z.cs</DependentUpon>
+    <EmbeddedResource Include="fich.resx">
+      <DependentUpon>fich.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

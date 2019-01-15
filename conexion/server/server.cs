@@ -104,7 +104,7 @@ namespace server
         private void butzip_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form zip = new zip.Z();
+            Form zip = new zip.fich();
             zip.Show();
         }
     }
