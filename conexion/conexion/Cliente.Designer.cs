@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labarc = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.labresp = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.labconver = new System.Windows.Forms.Label();
@@ -36,8 +38,6 @@
             this.conectar = new System.Windows.Forms.Button();
             this.txtenviar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.labarc = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +58,23 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cliente";
+            // 
+            // labarc
+            // 
+            this.labarc.AutoSize = true;
+            this.labarc.Location = new System.Drawing.Point(71, 134);
+            this.labarc.Name = "labarc";
+            this.labarc.Size = new System.Drawing.Size(0, 13);
+            this.labarc.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(19, 146);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Archivo:";
             // 
             // labresp
             // 
@@ -118,23 +135,6 @@
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Enviar:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 146);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Archivo:";
-            // 
-            // labarc
-            // 
-            this.labarc.AutoSize = true;
-            this.labarc.Location = new System.Drawing.Point(72, 145);
-            this.labarc.Name = "labarc";
-            this.labarc.Size = new System.Drawing.Size(0, 13);
-            this.labarc.TabIndex = 8;
             // 
             // Cliente
             // 
