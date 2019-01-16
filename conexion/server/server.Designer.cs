@@ -31,11 +31,13 @@
             this.labestado = new System.Windows.Forms.Label();
             this.labconec = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.butzip = new System.Windows.Forms.Button();
             this.labenvia = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.labreci = new System.Windows.Forms.Label();
             this.lab2 = new System.Windows.Forms.Label();
+            this.labarc = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +61,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.labarc);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.butzip);
             this.groupBox1.Controls.Add(this.labenvia);
             this.groupBox1.Controls.Add(this.label1);
@@ -73,9 +77,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Server";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 128);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Leer Archivo";
+            // 
             // butzip
             // 
-            this.butzip.Location = new System.Drawing.Point(9, 133);
+            this.butzip.Location = new System.Drawing.Point(6, 166);
             this.butzip.Name = "butzip";
             this.butzip.Size = new System.Drawing.Size(75, 23);
             this.butzip.TabIndex = 6;
@@ -117,6 +130,14 @@
             this.lab2.TabIndex = 2;
             this.lab2.Text = "Recibido:";
             // 
+            // labarc
+            // 
+            this.labarc.AutoSize = true;
+            this.labarc.Location = new System.Drawing.Point(90, 116);
+            this.labarc.Name = "labarc";
+            this.labarc.Size = new System.Drawing.Size(0, 13);
+            this.labarc.TabIndex = 8;
+            // 
             // server
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -142,6 +163,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labenvia;
         private System.Windows.Forms.Button butzip;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labarc;
     }
 }
 

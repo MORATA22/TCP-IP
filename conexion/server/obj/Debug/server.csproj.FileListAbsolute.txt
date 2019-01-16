@@ -22,3 +22,6 @@ C:\Users\admin\Documents\GitHub\TCP-IP\conexion\server\bin\Debug\zip.exe
 C:\Users\admin\Documents\GitHub\TCP-IP\conexion\server\bin\Debug\zip.pdb
 C:\Users\admin\Documents\GitHub\TCP-IP\conexion\server\bin\Debug\zip.exe.config
 C:\Users\admin\Documents\GitHub\TCP-IP\conexion\server\obj\Debug\server.csproj.CopyComplete
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\dll\server.exe.config
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\dll\server.exe
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\dll\server.pdb

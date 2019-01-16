@@ -29,18 +29,22 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labresp = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.labconver = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.conectar = new System.Windows.Forms.Button();
             this.txtenviar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.labresp = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labarc = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.labarc);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.labresp);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.labconver);
@@ -50,10 +54,18 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(298, 72);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 196);
+            this.groupBox1.Size = new System.Drawing.Size(204, 255);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cliente";
+            // 
+            // labresp
+            // 
+            this.labresp.AutoSize = true;
+            this.labresp.Location = new System.Drawing.Point(118, 107);
+            this.labresp.Name = "labresp";
+            this.labresp.Size = new System.Drawing.Size(0, 13);
+            this.labresp.TabIndex = 6;
             // 
             // label3
             // 
@@ -83,7 +95,7 @@
             // 
             // conectar
             // 
-            this.conectar.Location = new System.Drawing.Point(62, 144);
+            this.conectar.Location = new System.Drawing.Point(62, 200);
             this.conectar.Name = "conectar";
             this.conectar.Size = new System.Drawing.Size(75, 23);
             this.conectar.TabIndex = 2;
@@ -107,13 +119,22 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Enviar:";
             // 
-            // labresp
+            // label4
             // 
-            this.labresp.AutoSize = true;
-            this.labresp.Location = new System.Drawing.Point(118, 107);
-            this.labresp.Name = "labresp";
-            this.labresp.Size = new System.Drawing.Size(0, 13);
-            this.labresp.TabIndex = 6;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(19, 146);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Archivo:";
+            // 
+            // labarc
+            // 
+            this.labarc.AutoSize = true;
+            this.labarc.Location = new System.Drawing.Point(72, 145);
+            this.labarc.Name = "labarc";
+            this.labarc.Size = new System.Drawing.Size(0, 13);
+            this.labarc.TabIndex = 8;
             // 
             // Cliente
             // 
@@ -139,6 +160,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labresp;
+        private System.Windows.Forms.Label labarc;
+        private System.Windows.Forms.Label label4;
     }
 }
 

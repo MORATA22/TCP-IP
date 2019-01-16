@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Net;
 using System.Net.Sockets;
+using System.IO;
 
 namespace server
 {
@@ -94,11 +95,39 @@ namespace server
                             {
                                 labenvia.Text = respuesta;
                             }
+
+                            //archivo
+                            byte[] byt = System.Text.Encoding.ASCII.GetBytes(larchivo());
+                            stream.Write(byt, 0, byt.Length);
+
+                            if (labarc.InvokeRequired)
+                            {
+                                labarc.Invoke((MethodInvoker)delegate { labarc.Text = larchivo(); });
+                            }
+                            else
+                            {
+                                labarc.Text = larchivo();
+                            }
                         }
                             cliente.Close();
                     }                       
                 }
             }
+        }
+
+        private string larchivo()
+        {
+            string linia;
+            string archivo = null;
+            StreamReader arch = new StreamReader(@"C:\Users\admin\Documents\GitHub\TCP-IP\conexion\dll\hola.txt");
+
+            while ((linia = arch.ReadLine()) != null)
+            {
+                archivo = archivo + "\n" + linia;
+            }
+
+            arch.Close();
+            return archivo;
         }
 
         private void butzip_Click(object sender, EventArgs e)

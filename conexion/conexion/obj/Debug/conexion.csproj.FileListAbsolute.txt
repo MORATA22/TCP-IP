@@ -17,4 +17,7 @@ C:\Users\admin\Documents\GitHub\TCP-IP\conexion\conexion\obj\Debug\conexion.cspr
 C:\Users\admin\Documents\GitHub\TCP-IP\conexion\conexion\obj\Debug\conexion.csproj.CoreCompileInputs.cache
 C:\Users\admin\Documents\GitHub\TCP-IP\conexion\conexion\obj\Debug\conexion.exe
 C:\Users\admin\Documents\GitHub\TCP-IP\conexion\conexion\obj\Debug\conexion.pdb
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\dll\conexion.exe.config
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\dll\conexion.exe
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\dll\conexion.pdb
 C:\Users\admin\Documents\GitHub\TCP-IP\conexion\conexion\obj\Debug\conexion.csprojAssemblyReference.cache

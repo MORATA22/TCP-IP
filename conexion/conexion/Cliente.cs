@@ -55,6 +55,21 @@ namespace conexion
                     labresp.Text = mensaje;
                 }
 
+                dades = new Byte[1024];
+
+                String responseData = String.Empty;
+                Int32 byt = stream.Read(dades, 0, dades.Length);
+                responseData = System.Text.Encoding.ASCII.GetString(dades, 0, byt);
+
+                if (labarc.InvokeRequired)
+                {
+                    labarc.Invoke((MethodInvoker)delegate { labarc.Text = responseData; });
+                }
+                else
+                {
+                    labarc.Text = responseData;
+                }
+                stream.Close();
                 client.Close();
             }
             catch (SocketException e)
