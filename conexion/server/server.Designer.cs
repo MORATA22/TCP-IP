@@ -31,7 +31,7 @@
             this.labestado = new System.Windows.Forms.Label();
             this.labconec = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.butfic = new System.Windows.Forms.Button();
+            this.butzip = new System.Windows.Forms.Button();
             this.labenvia = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.labreci = new System.Windows.Forms.Label();
@@ -59,7 +59,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.butfic);
+            this.groupBox1.Controls.Add(this.butzip);
             this.groupBox1.Controls.Add(this.labenvia);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.labreci);
@@ -68,20 +68,20 @@
             this.groupBox1.Controls.Add(this.labconec);
             this.groupBox1.Location = new System.Drawing.Point(160, 86);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 173);
+            this.groupBox1.Size = new System.Drawing.Size(236, 239);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Server";
             // 
-            // butfic
+            // butzip
             // 
-            this.butfic.Location = new System.Drawing.Point(9, 133);
-            this.butfic.Name = "butfic";
-            this.butfic.Size = new System.Drawing.Size(75, 23);
-            this.butfic.TabIndex = 6;
-            this.butfic.Text = "Ficheros";
-            this.butfic.UseVisualStyleBackColor = true;
-            this.butfic.Click += new System.EventHandler(this.butzip_Click);
+            this.butzip.Location = new System.Drawing.Point(9, 133);
+            this.butzip.Name = "butzip";
+            this.butzip.Size = new System.Drawing.Size(75, 23);
+            this.butzip.TabIndex = 6;
+            this.butzip.Text = "ZIP";
+            this.butzip.UseVisualStyleBackColor = true;
+            this.butzip.Click += new System.EventHandler(this.butzip_Click);
             // 
             // labenvia
             // 
@@ -141,7 +141,7 @@
         private System.Windows.Forms.Label labreci;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labenvia;
-        private System.Windows.Forms.Button butfic;
+        private System.Windows.Forms.Button butzip;
     }
 }
 

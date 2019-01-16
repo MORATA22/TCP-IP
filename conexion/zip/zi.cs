@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace zip
 {
-    public partial class fich : Form
+    public partial class zi : Form
     {
-        public fich()
+        public zi()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace zip
 {
-    partial class fich
+    partial class zi
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // fich
+            // zi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "fich";
-            this.Text = "ficheros";
+            this.Name = "zi";
+            this.Text = "ZIP";
             this.ResumeLayout(false);
 
         }
