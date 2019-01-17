@@ -23,14 +23,19 @@ namespace conexion
         {
             try
             {
-                //Instanciamos TCPClient
+                //Instanciamos un cliente para conectarse al servidor
                 TcpClient client = new TcpClient(server, port);
-
-                Byte[] dades = System.Text.Encoding.ASCII.GetBytes(mess);
-                NetworkStream stream = client.GetStream();       
                 
+                //Pasamos la variable mess (mensaje) ha ASCII y lo metemos dentro de un array de byte
+                Byte[] dades = System.Text.Encoding.ASCII.GetBytes(mess);
+
+                //Con NetworkStream nos proporciona el acceso a la red para enviar, recibir etc,(GetStream utilizado para enviar y recibir datos).
+                NetworkStream stream = client.GetStream();
+
+                //stream.Write escribimos en NetworkStream(flujo de red), en este caso ponemos nuestro array de bytes donde está todo nuestro mensaje(dades) y lo enviamos
                 stream.Write(dades, 0, dades.Length);
 
+                //Invocamos al control para poder acceder a el
                 if (labconver.InvokeRequired)
                 {
                     labconver.Invoke((MethodInvoker)delegate { labconver.Text = txtenviar.Text; });
@@ -40,12 +45,16 @@ namespace conexion
                     labconver.Text = txtenviar.Text;
                 }
 
+                //Generamos un nuevo array vacio
                 dades = new Byte[256];
                 string mensaje = "";
 
+                // stream.Read leemos el flujo de red de nuestro NetworkStream
                 Int32 bytes = stream.Read(dades, 0, dades.Length);
+                //Pasamos a una cadena el array de bytes y lo guardamos en un string
                 mensaje = System.Text.Encoding.ASCII.GetString(dades, 0, bytes);
 
+                //invocamos a un control diferente al de antes y ponemos el mensaje que nos ha llegado
                 if (labresp.InvokeRequired)
                 {
                     labresp.Invoke((MethodInvoker)delegate { labresp.Text = mensaje; });
@@ -55,10 +64,13 @@ namespace conexion
                     labresp.Text = mensaje;
                 }
 
+                //Lo mismo de antes pero para un archivo
                 dades = new Byte[1024];
 
                 String responseData = String.Empty;
+                //leemos array
                 Int32 byt = stream.Read(dades, 0, dades.Length);
+                //Generamos cadena
                 responseData = System.Text.Encoding.ASCII.GetString(dades, 0, byt);
 
                 if (labarc.InvokeRequired)
@@ -69,6 +81,7 @@ namespace conexion
                 {
                     labarc.Text = responseData;
                 }
+                //Cerramos conexiones
                 stream.Close();
                 client.Close();
             }

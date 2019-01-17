@@ -32,11 +32,10 @@ namespace server
 
         private void conex()
         {
-            //instancias
+            //instancias un cliente y un server tcp para verse
             TcpListener lisen = null;
             TcpClient cliente = null;
             int i = 0;
-
 
             while (true)
             {
@@ -52,64 +51,78 @@ namespace server
                     Console.WriteLine(e.Message);
                 }
                 while (true)
-                {                    
+                {       
+                    //Pending determinamos si hay conexiones
                     if (lisen.Pending())
-                    {                        
-                        cliente = lisen.AcceptTcpClient();
-
-                        if (labconec.InvokeRequired)
+                    {
+                        try
                         {
-                            labconec.Invoke((MethodInvoker)delegate { labconec.Text = "Conectado al cliente\n"; });
+                            //Al ver que hay conexiones accepta las solicitudes de los clientes
+                            cliente = lisen.AcceptTcpClient();
+
+                            if (labconec.InvokeRequired)
+                            {
+                                labconec.Invoke((MethodInvoker)delegate { labconec.Text = "Conectado al cliente\n"; });
+                            }
+                            else
+                            {
+                                labconec.Text = "Conectado al cliente\n";
+                            }
+                            Byte[] bytes = new Byte[256];
+
+                            string mensaje = "";
+                            //getstream enviar y recibir datos
+                            NetworkStream stream = cliente.GetStream();
+
+                            //Le ponemos al bucle que con Streamread mire si hay algo en el array de bytes mientras sea diferente ha 0 entrará en el bucle
+                            while ((i = stream.Read(bytes, 0, bytes.Length)) != 0)
+                            {
+                                //cadena recibida
+                                mensaje = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
+
+                                if (labreci.InvokeRequired)
+                                {
+                                    labreci.Invoke((MethodInvoker)delegate { labreci.Text = mensaje; });
+                                }
+                                else
+                                {
+                                    labreci.Text = mensaje;
+                                }
+
+                                //Pasamos la variable respuesta Ha un array de bytes(by)
+                                string respuesta = "Recibido";
+                                byte[] by = System.Text.Encoding.ASCII.GetBytes(respuesta);
+                                //escribimos en el flujo de red
+                                stream.Write(by, 0, by.Length);
+
+                                if (labenvia.InvokeRequired)
+                                {
+                                    labenvia.Invoke((MethodInvoker)delegate { labenvia.Text = respuesta; });
+                                }
+                                else
+                                {
+                                    labenvia.Text = respuesta;
+                                }
+
+                                //Lo mismo de antes pero para ller un archivo
+                                byte[] byt = System.Text.Encoding.ASCII.GetBytes(larchivo());
+                                stream.Write(byt, 0, byt.Length);
+
+                                if (labarc.InvokeRequired)
+                                {
+                                    labarc.Invoke((MethodInvoker)delegate { labarc.Text = larchivo(); });
+                                }
+                                else
+                                {
+                                    labarc.Text = larchivo();
+                                }
+                            }
                         }
-                        else
+                        catch(Exception e)
                         {
-                            labconec.Text = "Conectado al cliente\n";
+                            Console.WriteLine("Error de conexion: {0}", e);
                         }
-                        Byte[] bytes = new Byte[256];
-
-                        string mensaje = "";
-                        NetworkStream stream = cliente.GetStream();
-
-                        while ((i = stream.Read(bytes, 0, bytes.Length)) != 0)
-                        {                            
-                            mensaje = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
-
-                            if (labreci.InvokeRequired)
-                            {
-                                labreci.Invoke((MethodInvoker)delegate { labreci.Text = mensaje; });
-                            }
-                            else
-                            {
-                                labreci.Text = mensaje;
-                            }
-
-                            string respuesta = "Recibido";
-                            byte[] by = System.Text.Encoding.ASCII.GetBytes(respuesta);
-
-                            stream.Write(by, 0, by.Length);
-                            if (labenvia.InvokeRequired)
-                            {
-                                labenvia.Invoke((MethodInvoker)delegate { labenvia.Text = respuesta; });
-                            }
-                            else
-                            {
-                                labenvia.Text = respuesta;
-                            }
-
-                            //archivo
-                            byte[] byt = System.Text.Encoding.ASCII.GetBytes(larchivo());
-                            stream.Write(byt, 0, byt.Length);
-
-                            if (labarc.InvokeRequired)
-                            {
-                                labarc.Invoke((MethodInvoker)delegate { labarc.Text = larchivo(); });
-                            }
-                            else
-                            {
-                                labarc.Text = larchivo();
-                            }
-                        }
-                            cliente.Close();
+                            cliente.Close();                        
                     }                       
                 }
             }
@@ -119,6 +132,7 @@ namespace server
         {
             string linia;
             string archivo = null;
+            //Leemos en el flujo de red el archivo hola.txt
             StreamReader arch = new StreamReader(@"C:\Users\admin\Documents\GitHub\TCP-IP\conexion\dll\hola.txt");
 
             while ((linia = arch.ReadLine()) != null)
