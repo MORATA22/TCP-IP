@@ -123,7 +123,7 @@ namespace server
 
             while ((linia = arch.ReadLine()) != null)
             {
-                archivo = archivo + "\n" + linia;
+                archivo = archivo + linia + "\n";
             }
 
             arch.Close();

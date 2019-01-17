@@ -31,13 +31,13 @@
             this.labestado = new System.Windows.Forms.Label();
             this.labconec = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labarc = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.butzip = new System.Windows.Forms.Button();
             this.labenvia = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.labreci = new System.Windows.Forms.Label();
             this.lab2 = new System.Windows.Forms.Label();
-            this.labarc = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,6 +76,14 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Server";
+            // 
+            // labarc
+            // 
+            this.labarc.AutoSize = true;
+            this.labarc.Location = new System.Drawing.Point(90, 128);
+            this.labarc.Name = "labarc";
+            this.labarc.Size = new System.Drawing.Size(0, 13);
+            this.labarc.TabIndex = 8;
             // 
             // label2
             // 
@@ -129,14 +137,6 @@
             this.lab2.Size = new System.Drawing.Size(52, 13);
             this.lab2.TabIndex = 2;
             this.lab2.Text = "Recibido:";
-            // 
-            // labarc
-            // 
-            this.labarc.AutoSize = true;
-            this.labarc.Location = new System.Drawing.Point(90, 116);
-            this.labarc.Name = "labarc";
-            this.labarc.Size = new System.Drawing.Size(0, 13);
-            this.labarc.TabIndex = 8;
             // 
             // server
             // 

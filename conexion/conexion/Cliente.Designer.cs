@@ -62,7 +62,7 @@
             // labarc
             // 
             this.labarc.AutoSize = true;
-            this.labarc.Location = new System.Drawing.Point(71, 134);
+            this.labarc.Location = new System.Drawing.Point(71, 146);
             this.labarc.Name = "labarc";
             this.labarc.Size = new System.Drawing.Size(0, 13);
             this.labarc.TabIndex = 8;

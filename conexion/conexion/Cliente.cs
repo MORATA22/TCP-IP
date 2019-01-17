@@ -88,8 +88,6 @@ namespace conexion
             {
                 MessageBox.Show("Error");
             }
-        }
-
-        
-    }
+        }        
+    }    
 }
