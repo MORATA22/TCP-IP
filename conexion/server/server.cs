@@ -104,7 +104,7 @@ namespace server
                                     labenvia.Text = respuesta;
                                 }
 
-                                //Lo mismo de antes pero para ller un archivo
+                                //Lo mismo de antes pero para poner en el label el contenido del archivo y escribirlo en la red
                                 byte[] byt = System.Text.Encoding.ASCII.GetBytes(larchivo());
                                 stream.Write(byt, 0, byt.Length);
 

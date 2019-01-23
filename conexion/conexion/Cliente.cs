@@ -29,7 +29,7 @@ namespace conexion
                 //Pasamos la variable mess (mensaje) ha ASCII y lo metemos dentro de un array de byte
                 Byte[] dades = System.Text.Encoding.ASCII.GetBytes(mess);
 
-                //Con NetworkStream nos proporciona el acceso a la red para enviar, recibir etc,(GetStream utilizado para enviar y recibir datos).
+                //Con NetworkStream nos proporciona el acceso a la red (GetStream utilizado para enviar y recibir datos).
                 NetworkStream stream = client.GetStream();
 
                 //stream.Write escribimos en NetworkStream(flujo de red), en este caso ponemos nuestro array de bytes donde está todo nuestro mensaje(dades) y lo enviamos
