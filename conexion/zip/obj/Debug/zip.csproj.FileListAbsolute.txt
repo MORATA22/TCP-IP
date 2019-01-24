@@ -1,0 +1,13 @@
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\zip\bin\Debug\zip.exe.config
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\zip\bin\Debug\zip.exe
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\zip\bin\Debug\zip.pdb
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\zip\obj\Debug\zip.Properties.Resources.resources
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\zip\obj\Debug\zip.csproj.GenerateResource.cache
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\zip\obj\Debug\zip.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\zip\obj\Debug\zip.exe
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\zip\obj\Debug\zip.pdb
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\zip\obj\Debug\zip.zi.resources
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\dll\zip.exe.config
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\dll\zip.exe
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\dll\zip.pdb
+C:\Users\admin\Documents\GitHub\TCP-IP\conexion\zip\obj\Debug\zip.csprojAssemblyReference.cache
