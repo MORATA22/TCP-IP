@@ -15,7 +15,7 @@ using System.IO;
 namespace server
 {
     public partial class server : Form
-    {
+    {       
         public server()
         {
             InitializeComponent();
@@ -25,9 +25,12 @@ namespace server
         {
            labestado.Text = "Encendido";
             //instanciamos un thread que ejecute la función conex
-           Thread hiloServ = new Thread(conex);
+          
+            Thread serverThread = new Thread(ReceiveFiles);
             // lo inicimaos con start
-           hiloServ.Start();
+            serverThread.SetApartmentState(ApartmentState.STA);           
+            serverThread.Start();
+
         }
 
         private void conex()
@@ -51,7 +54,8 @@ namespace server
                     Console.WriteLine(e.Message);
                 }
                 while (true)
-                {       
+                {
+                    
                     //Pending determinamos si hay conexiones
                     if (lisen.Pending())
                     {
@@ -124,6 +128,100 @@ namespace server
                         }
                             cliente.Close();                        
                     }                       
+                }
+            }
+        }
+       
+        public void ReceiveFiles()
+        {
+            int port = 1000;
+            IPAddress IPA = IPAddress.Parse("127.0.0.1");
+            TcpListener _Listener = new TcpListener(IPA, port);
+            NetworkStream _nStream;
+            TcpClient _Client = new TcpClient();
+            const int _BufferSize = 1024;
+            try
+            {              
+                ///Instanciamos un nuevo TcpListener, que escuche a cualquier ip
+                ///y por el puerto que usamos
+               
+                ///Iniciamos el listener
+                _Listener.Start();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            byte[] RecData = new byte[_BufferSize];
+            int RecBytes;
+
+            for (; ; )
+            {
+                string _Status = string.Empty;
+                try
+                {
+                    ///Sacamos un messagebox que pregunta si queremos recibir el fichero o no
+                    string message = "Accept the Incoming File ";
+                    string caption = "Incoming Connection";
+                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    DialogResult result;
+                    ///si hay solicitudes de conexion pendientes hace todo esto,
+                    ///sino simplemente sigue escuchando
+                    if (_Listener.Pending())
+                    {
+                        ///Indicamos al Listener que acepte las solicitudes de
+                        ///conexion pendiente de el TCPClient
+                        _Client = _Listener.AcceptTcpClient();
+                        // Get a stream object for reading and writing
+                        _nStream = _Client.GetStream();
+                        _Status = "Connected to a client\n";
+                        result = MessageBox.Show(message, caption, buttons);
+                        ///Si la respuesta del messagebox ha sido que si que queremos recibir el fichero
+                        ///hacemos esto y sino no hacemos nada
+                        if (result == System.Windows.Forms.DialogResult.Yes)
+                        {
+                            string SaveFileName = string.Empty;
+                            ///pedimos una ubicacion para guardar el archivo que vamos a recibir
+                            SaveFileDialog DialogSave = new SaveFileDialog();
+                            ///filtramos que se muestren todos los archivos
+                            DialogSave.Filter = "All files (*.*)|*.*";
+                            ///restaura el cuadro de dialogo antes de cerrarse
+                            DialogSave.RestoreDirectory = true;
+                            ///definimos un titulo
+                            DialogSave.Title = "Where do you want to save the file?";
+                            ///directorio inicial
+                            DialogSave.InitialDirectory = @"C:/";
+                            ///indica que se ha guardado correctamente
+                            if (DialogSave.ShowDialog() == DialogResult.OK)
+                                SaveFileName = DialogSave.FileName;
+                            ///si hemos puesto nombre al archivo
+                            if (SaveFileName != string.Empty)
+                            {
+                                int totalrecbytes = 0;
+                                ///definimos un nuevo filestream con los parametros: el archivo que estamos guardando, le decimos 
+                                ///que lo abra o lo cree si no existe, le damos permisos de escritura
+                                FileStream Fs = new FileStream(SaveFileName, FileMode.OpenOrCreate, FileAccess.Write);
+                                ///Mientras que el buffer sea mas grande a 0 sigue con el bucle
+                                while ((RecBytes = _nStream.Read(RecData, 0, RecData.Length)) > 0)
+                                {
+                                    ///Escribe lo que hay en el buffer
+                                    Fs.Write(RecData, 0, RecBytes);
+                                    totalrecbytes += RecBytes;
+                                }
+                                ///cierra el filestream
+                                Fs.Close();
+                            }
+                            ///Cerramos todo
+                            _nStream.Close();
+                            _Client.Close();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    //netstream.Close();
                 }
             }
         }

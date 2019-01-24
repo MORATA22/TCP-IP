@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Sockets;
+using System.IO;
 
 namespace conexion
 {
     public partial class Cliente : Form
     {
-        public int port = 1000;
+        const string cod = @"archivo/01hola";
+        const Int32 port = 1000;
         public Cliente()
         {
             InitializeComponent();
@@ -96,11 +98,57 @@ namespace conexion
             if (txtenviar.Text != string.Empty)
             {
                 conec("127.0.0.1", txtenviar.Text);
+                SendFiles("127.0.0.1", cod, port);
             }
             else
             {
                 MessageBox.Show("Error");
             }
-        }        
+        }
+
+        public void SendFiles(string codi,string IPA, Int32 PortN)
+        {
+            byte[] SendingBuffer = null;
+            NetworkStream _nStream;
+            int _BufferSize = 1024;
+
+
+            try
+            {
+                TcpClient _Client = new TcpClient(IPA, PortN);
+               
+                _nStream = _Client.GetStream();
+                FileStream Fs = new FileStream(codi, FileMode.Open, FileAccess.Read);
+                int NoOfPackets = Convert.ToInt32
+                    (Math.Ceiling(Convert.ToDouble(Fs.Length) / Convert.ToDouble(_BufferSize)));
+                progressBar1.Maximum = NoOfPackets;
+                int TotalLength = (int)Fs.Length, CurrentPacketLength, counter = 0;
+                for (int i = 0; i < NoOfPackets; i++)
+                {
+                    if (TotalLength > _BufferSize)
+                    {
+                        CurrentPacketLength = _BufferSize;
+                        TotalLength = TotalLength - CurrentPacketLength;
+                    }
+                    else
+                        CurrentPacketLength = TotalLength;
+
+                    SendingBuffer = new byte[CurrentPacketLength];
+                    Fs.Read(SendingBuffer, 0, CurrentPacketLength);
+                    _nStream.Write(SendingBuffer, 0, (int)SendingBuffer.Length);
+                    if (progressBar1.Value >= progressBar1.Maximum)
+                        progressBar1.Value = progressBar1.Minimum;
+
+                    progressBar1.PerformStep();
+                }
+               
+                Fs.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }            
+        }
+
     }    
 }

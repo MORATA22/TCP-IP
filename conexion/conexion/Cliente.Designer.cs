@@ -38,11 +38,13 @@
             this.conectar = new System.Windows.Forms.Button();
             this.txtenviar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.progressBar1);
             this.groupBox1.Controls.Add(this.labarc);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.labresp);
@@ -136,6 +138,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Enviar:";
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(6, 226);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(192, 23);
+            this.progressBar1.TabIndex = 9;
+            // 
             // Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -162,6 +171,7 @@
         private System.Windows.Forms.Label labresp;
         private System.Windows.Forms.Label labarc;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 
