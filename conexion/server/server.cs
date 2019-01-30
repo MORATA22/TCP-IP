@@ -209,12 +209,11 @@ namespace server
                                     Fs.Write(RecData, 0, RecBytes);
                                     totalrecbytes += RecBytes;
                                 }
-                                ///cierra el filestream
+                                ///Cerramos todo
                                 Fs.Close();
-                            }
-                            ///Cerramos todo
-                            _nStream.Close();
-                            _Client.Close();
+                                _nStream.Close();
+                                _Client.Close();
+                            }                   
                         }
                     }
                 }
