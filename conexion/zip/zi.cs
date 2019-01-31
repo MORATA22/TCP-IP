@@ -15,10 +15,17 @@ namespace zip
     public partial class zi : Form
     {
         //Vatiables para comprimir y descomprimir
-        const string Compri = @"archivo\01hola";
-        const string CompressArchive = @"archivo\pruebazip.zip";
-        const string Decompri = @"archivo";        
+        const string Compri = "archivo/01hola";
+        const string CompressArchive = "archivo/pruebazip.zip";
+        const string Decompri = "archivo";
 
+        //Var para las letras aleatorias
+        String[] alphabet = new String[] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
+        String[] numletfile = new String[1000000];        
+        Random num = new Random();
+        String conte = String.Empty;
+
+        #region ZIPs
         public zi()
         {
             InitializeComponent();
@@ -81,6 +88,47 @@ namespace zip
         private void butdesc_Click(object sender, EventArgs e)
         {
             Descomprimir();
+        }
+        #endregion
+                
+        private String[] crealetters(int number)
+        {
+            //StreamWrite para escribir en los archivos de la variable file
+            //Ruta donde estarán los archivos
+            //Bucle for para poner el billon de letras dentro de un fichero
+            String file = "Crip/encrip" + number + ".txt";
+            StreamWriter wfile = new StreamWriter(file);
+
+            for (int i = 0; i < numletfile.Length; i++)
+            {
+                //randomnum recorreremos el array alphabet aleatoriamente por el objeto num
+                //Con el StreamWrite wfile escribimos el contenido de la variable conte
+                //Finalmente igualamos nuestro array numletfile[1000000] al conte y lo retornamos para utilizarlo mas adelante
+                int randomnum = num.Next(0, 25);
+                conte = alphabet[randomnum];
+                wfile.Write(conte);
+                numletfile[i] = conte;
+            }
+            wfile.Close();
+            return numletfile;
+        }
+        private void files()
+        {
+            //En esta función creamos un array de 16 millones y lo igualamos a la función anterior crealetters
+            //Esto ejecutará la función anterior 4 veces,crealetters (generará 4 archivos con un millón de letras cada uno)
+            String[] random = new string[16000000];
+
+            for (int i = 1; i <= 4; i++)
+            {
+                random = crealetters(i);
+            }
+        }
+
+        private void butencrip_Click(object sender, EventArgs e)
+        {
+            //Ejecutamos la creación d elo ficheros a partir de un botón
+            files();
+            MessageBox.Show("Archivos generados correctamente");
         }
     }
 }

@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.butencrip = new System.Windows.Forms.Button();
             this.butdesc = new System.Windows.Forms.Button();
             this.butcomp = new System.Windows.Forms.Button();
-            this.encrip = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.encrip);
+            this.groupBox1.Controls.Add(this.butencrip);
             this.groupBox1.Controls.Add(this.butdesc);
             this.groupBox1.Controls.Add(this.butcomp);
             this.groupBox1.Location = new System.Drawing.Point(280, 113);
@@ -46,6 +46,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ZIPIZAPE";
+            // 
+            // butencrip
+            // 
+            this.butencrip.Location = new System.Drawing.Point(214, 49);
+            this.butencrip.Name = "butencrip";
+            this.butencrip.Size = new System.Drawing.Size(122, 44);
+            this.butencrip.TabIndex = 2;
+            this.butencrip.Text = "Encriptar";
+            this.butencrip.UseVisualStyleBackColor = true;
+            this.butencrip.Click += new System.EventHandler(this.butencrip_Click);
             // 
             // butdesc
             // 
@@ -67,15 +77,6 @@
             this.butcomp.UseVisualStyleBackColor = true;
             this.butcomp.Click += new System.EventHandler(this.butcomp_Click);
             // 
-            // encrip
-            // 
-            this.encrip.Location = new System.Drawing.Point(214, 49);
-            this.encrip.Name = "encrip";
-            this.encrip.Size = new System.Drawing.Size(122, 44);
-            this.encrip.TabIndex = 2;
-            this.encrip.Text = "Encriptar";
-            this.encrip.UseVisualStyleBackColor = true;
-            // 
             // zi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -94,7 +95,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button butdesc;
         private System.Windows.Forms.Button butcomp;
-        private System.Windows.Forms.Button encrip;
+        private System.Windows.Forms.Button butencrip;
     }
 }
 
