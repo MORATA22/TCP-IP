@@ -29,21 +29,33 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.butcomp = new System.Windows.Forms.Button();
             this.butdesc = new System.Windows.Forms.Button();
+            this.butcomp = new System.Windows.Forms.Button();
+            this.encrip = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.encrip);
             this.groupBox1.Controls.Add(this.butdesc);
             this.groupBox1.Controls.Add(this.butcomp);
             this.groupBox1.Location = new System.Drawing.Point(280, 113);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(207, 137);
+            this.groupBox1.Size = new System.Drawing.Size(370, 132);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ZIPIZAPE";
+            // 
+            // butdesc
+            // 
+            this.butdesc.Location = new System.Drawing.Point(69, 80);
+            this.butdesc.Name = "butdesc";
+            this.butdesc.Size = new System.Drawing.Size(75, 23);
+            this.butdesc.TabIndex = 1;
+            this.butdesc.Text = "UPZIP";
+            this.butdesc.UseVisualStyleBackColor = true;
+            this.butdesc.Click += new System.EventHandler(this.butdesc_Click);
             // 
             // butcomp
             // 
@@ -55,15 +67,14 @@
             this.butcomp.UseVisualStyleBackColor = true;
             this.butcomp.Click += new System.EventHandler(this.butcomp_Click);
             // 
-            // butdesc
+            // encrip
             // 
-            this.butdesc.Location = new System.Drawing.Point(69, 80);
-            this.butdesc.Name = "butdesc";
-            this.butdesc.Size = new System.Drawing.Size(75, 23);
-            this.butdesc.TabIndex = 1;
-            this.butdesc.Text = "UPZIP";
-            this.butdesc.UseVisualStyleBackColor = true;
-            this.butdesc.Click += new System.EventHandler(this.butdesc_Click);
+            this.encrip.Location = new System.Drawing.Point(214, 49);
+            this.encrip.Name = "encrip";
+            this.encrip.Size = new System.Drawing.Size(122, 44);
+            this.encrip.TabIndex = 2;
+            this.encrip.Text = "Encriptar";
+            this.encrip.UseVisualStyleBackColor = true;
             // 
             // zi
             // 
@@ -83,6 +94,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button butdesc;
         private System.Windows.Forms.Button butcomp;
+        private System.Windows.Forms.Button encrip;
     }
 }
 
