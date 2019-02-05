@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.IO.Compression;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace zip
 {
@@ -21,9 +23,11 @@ namespace zip
 
         //Var para las letras aleatorias
         String[] alphabet = new String[] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
-        String[] numletfile = new String[1000000];        
+        String[] numletfile = new String[1000000];
+        String[] lett = new String[26];
         Random num = new Random();
         String conte = String.Empty;
+        
 
         #region ZIPs
         public zi()
@@ -90,7 +94,15 @@ namespace zip
             Descomprimir();
         }
         #endregion
-                
+
+
+        private void butencrip_Click(object sender, EventArgs e)
+        {
+            //Ejecutamos la creación d elo ficheros a partir de un botón
+            files();
+            MessageBox.Show("Archivos generados correctamente");
+        }
+
         private String[] crealetters(int number)
         {
             //StreamWrite para escribir en los archivos de la variable file
@@ -121,14 +133,53 @@ namespace zip
             for (int i = 1; i <= 4; i++)
             {
                 random = crealetters(i);
+                XifrarLLetraNum(random, i);
             }
-        }
+        }        
 
-        private void butencrip_Click(object sender, EventArgs e)
+        public string[] CodiLletra()
         {
-            //Ejecutamos la creación d elo ficheros a partir de un botón
-            files();
-            MessageBox.Show("Archivos generados correctamente");
+            SqlConnection connexxion = new SqlConnection();
+            connexxion.ConnectionString = ConfigurationManager.ConnectionStrings["RepublicSystemConnectionString"].ConnectionString;
+            connexxion.Open();
+
+            DataSet dtsCli = new DataSet();
+
+            string query = "SELECT Numbers from InnerEncryptionData where IdInnerEncryption = 24";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, connexxion);
+            adapter.Fill(dtsCli);
+
+            string[] LletraCodi = new string[26];
+
+            for (int i = 0; i < LletraCodi.Length; i++)
+            {
+
+                LletraCodi[i] = dtsCli.Tables[0].Rows[i][0].ToString();
+
+            }
+
+            return LletraCodi;
+        }
+        private void XifrarLLetraNum(string[] crearLletres, int num)
+        {
+            bool verifica;
+            string rutaFitxer = "Crip/encrip" + num + ".txt";
+            lett = CodiLletra();
+            StreamWriter XifratNums = new StreamWriter(rutaFitxer);
+            for (int i = 0; i < crearLletres.Length; i++)
+            {
+                verifica = false;
+                for (int x = 0; x < alphabet.Length && verifica == false; x++)
+                {
+                    if (crearLletres[i].Equals(alphabet[x]))
+                    {
+                        XifratNums.Write(lett[x]);
+                        verifica = true;
+                    }
+                }
+            }
+            XifratNums.Close();
         }
     }
 }
