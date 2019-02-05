@@ -20,6 +20,7 @@ namespace zip
         const string Compri = "archivo/01hola";
         const string CompressArchive = "archivo/pruebazip.zip";
         const string Decompri = "archivo";
+        string ConnectionString = string.Empty;
 
         //Var para las letras aleatorias
         String[] alphabet = new String[] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
@@ -140,7 +141,7 @@ namespace zip
         public string[] CodiLletra()
         {
             SqlConnection connexxion = new SqlConnection();
-            connexxion.ConnectionString = ConfigurationManager.ConnectionStrings["RepublicSystemConnectionString"].ConnectionString;
+            connexxion.ConnectionString = ConfigurationManager.ConnectionStrings["RepublicSystemConnectionString"].ConnectionString;           
             connexxion.Open();
 
             DataSet dtsCli = new DataSet();
