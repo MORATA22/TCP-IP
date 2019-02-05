@@ -109,7 +109,7 @@ namespace zip
             //StreamWrite para escribir en los archivos de la variable file
             //Ruta donde estarán los archivos
             //Bucle for para poner el billon de letras dentro de un fichero
-            String file = "Crip/encrip" + number + ".txt";
+            String file = "Crip/lettencrip" + number + ".txt";
             StreamWriter wfile = new StreamWriter(file);
 
             for (int i = 0; i < numletfile.Length; i++)
@@ -165,7 +165,7 @@ namespace zip
         private void XifrarLLetraNum(string[] crearLletres, int num)
         {
             bool verifica;
-            string rutaFitxer = "Crip/encrip" + num + ".txt";
+            string rutaFitxer = "Crip/numencrip" + num + ".txt";
             lett = CodiLletra();
             StreamWriter XifratNums = new StreamWriter(rutaFitxer);
             for (int i = 0; i < crearLletres.Length; i++)
