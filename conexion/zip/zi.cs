@@ -140,19 +140,22 @@ namespace zip
 
         public string[] CodiLletra()
         {
+            //Conexión base de datos
             SqlConnection connexxion = new SqlConnection();
             connexxion.ConnectionString = ConfigurationManager.ConnectionStrings["RepublicSystemConnectionString"].ConnectionString;           
             connexxion.Open();
 
+            //Dataset
             DataSet dtsCli = new DataSet();
 
             string query = "SELECT Numbers from InnerEncryptionData where IdInnerEncryption = 24";
 
+            //Ponemos consulta dentro del dataset
             SqlDataAdapter adapter = new SqlDataAdapter(query, connexxion);
             adapter.Fill(dtsCli);
 
             string[] LletraCodi = new string[26];
-
+            
             for (int i = 0; i < LletraCodi.Length; i++)
             {
 
