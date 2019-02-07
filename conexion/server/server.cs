@@ -26,7 +26,7 @@ namespace server
            labestado.Text = "Encendido";
             //instanciamos un thread que ejecute la función conex
           
-            Thread serverThread = new Thread(ReceiveFiles);
+            Thread serverThread = new Thread(conex);           
             // lo inicimaos con start
             serverThread.SetApartmentState(ApartmentState.STA);           
             serverThread.Start();
