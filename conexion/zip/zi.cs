@@ -170,6 +170,7 @@ namespace zip
             bool verifica;
             string rutaFitxer = "Crip/numencrip" + num + ".txt";
             lett = CodiLletra();
+            //escribir en ficheros
             StreamWriter XifratNums = new StreamWriter(rutaFitxer);
             for (int i = 0; i < crearLletres.Length; i++)
             {
